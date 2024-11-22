@@ -31,6 +31,9 @@ jobs:
       - run:
           name: deploy
           command: '#e.g. ./deploy.sh'
+      -run:
+          name: test
+          command: mvn -Dtest= Calculadora* test
 workflows:
   build-and-test:
     jobs:
