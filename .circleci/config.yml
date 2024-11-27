@@ -27,10 +27,11 @@ jobs:
     docker:
       - image: cimg/base:stable
     steps:
+      -checkout
       # Replace this with steps to deploy to users
       - run:
-          name: deploy
-          command: '#e.g. ./deploy.sh'
+          name: build
+          command: mvn -B -DskipTests clean package
       -run:
           name: test
           command: mvn -Dtest= Calculadora* test
